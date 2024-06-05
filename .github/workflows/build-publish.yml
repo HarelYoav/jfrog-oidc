@@ -10,9 +10,9 @@ jobs:
   build:
      runs-on: ubuntu-latest
      env:
-      OIDC_AUDIENCE: 'support'
-      OIDC_PROVIDER: 'yoavh-github'
-      PLATFORM_REPO: 'yoavh-npm'
+      # OIDC_AUDIENCE: 'support'
+      # OIDC_PROVIDER: 'yoavh-github'
+      # PLATFORM_REPO: 'yoavh-npm'
      defaults:
       run:
         working-directory: ./package
@@ -28,8 +28,8 @@ jobs:
          env:  
            JF_URL: ${{ secrets.JF_URL }}
          with:
-           oidc-provider-name: ${{ env.OIDC_PROVIDER }}
-           oidc-audience: ${{ env.OIDC_AUDIENCE }}
+           oidc-provider-name: 'yoavh-github'
+           oidc-audience: 'support'
 
        # - name: Set CLI Config
        #   run: jf npm-config --global=true --repo-resolve=$PLATFORM_REPO --repo-deploy=$PLATFORM_REPO
