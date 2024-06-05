@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
      runs-on: ubuntu-latest
-     env:
+     # env:
       # OIDC_AUDIENCE: 'support'
       # OIDC_PROVIDER: 'yoavh-github'
       # PLATFORM_REPO: 'yoavh-npm'
