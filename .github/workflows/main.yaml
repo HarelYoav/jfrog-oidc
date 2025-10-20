@@ -8,6 +8,11 @@ permissions:
 jobs:
   build:
      runs-on: ubuntu-latest
+     container:
+       image: ${{ secrets.JF_URL }}/jordanta-docker-local/jfrog-mvn-yoah-rt
+       credentials:
+         username: ${{ vars.JF_USER }}
+         password: ${{ secrets.JF_TOKEN }}
      steps:
        - name: Print
          run: env | sort
@@ -22,10 +27,10 @@ jobs:
            version: latest
        - name: Ping Artifactory
          run: jf rt ping
-       - name: python config
-         run: jf pip-config --repo-resolve=yoavh-pypi-remote
-       - name: build
-         run: jf pip install -r requirements.txt
+       # - name: python config
+       #   run: jf pip-config --repo-resolve=yoavh-pypi-remote
+       # - name: build
+       #   run: jf pip install -r requirements.txt
 
 
          
