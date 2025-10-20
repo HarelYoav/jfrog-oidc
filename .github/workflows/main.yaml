@@ -18,8 +18,8 @@ jobs:
      steps:
        - name: Print
          run: env | sort
-       - name: Checkout
-         uses: actions/checkout@v4
+       # - name: Checkout
+       #   uses: actions/checkout@v4
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v4
          env:  
