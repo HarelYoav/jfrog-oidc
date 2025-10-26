@@ -9,12 +9,12 @@ permissions:
   id-token: write
 jobs:
   build:
-     runs-on: ubuntu-22.04-arm
-     container:
-       image: elinaf.jfrog.io/jordanta-docker-local/jfrog-mvn-yoah-rt
-       credentials:
-         username: ${{ secrets.JF_USER }}
-         password: ${{ secrets.JF_TOKEN }}
+     runs-on: ubuntu
+     # container:
+     #   image: elinaf.jfrog.io/jordanta-docker-local/jfrog-mvn-yoah-rt
+     #   credentials:
+     #     username: ${{ secrets.JF_USER }}
+     #     password: ${{ secrets.JF_TOKEN }}
      steps:
        - name: Print
          run: env | sort
