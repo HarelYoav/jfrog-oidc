@@ -31,7 +31,10 @@ jobs:
            # oidc-provider-name: 'yoavh-new'
            version: latest
        - name: Ping Artifactory
-         run: jf rt ping
+         run: |
+           jf rt ping
+           jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
+           jf npm i
        # - name: python config
        #   run: jf pip-config --repo-resolve=yoavh-pypi-remote
        # - name: build
