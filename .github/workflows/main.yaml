@@ -35,7 +35,7 @@ jobs:
            ls -la
            jf rt ping
            jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
-           jf npm i
+           jf npm ci
        # - name: python config
        #   run: jf pip-config --repo-resolve=yoavh-pypi-remote
        # - name: build
