@@ -33,6 +33,7 @@ jobs:
        - name: Ping Artifactory
          run: |
            ls -la
+           jf --version
            jf rt ping
            jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
            jf npm ci
