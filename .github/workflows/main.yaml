@@ -33,7 +33,7 @@ jobs:
            version: latest
        - name: Ping Artifactory
          run: |
-          jf xr cl /api/v1/configuration/workersCount
+          jf xr cl /api/v1/watches
         # jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
        # jf npm ci
        # - name: python config
