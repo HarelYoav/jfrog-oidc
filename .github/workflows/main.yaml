@@ -29,15 +29,15 @@ jobs:
          #   JF_PASSWORD: ${{ secrets.JF_TOKEN }}
            # JF_ACCESS_TOKEN: ${{ secrets.JF_TOKEN }}
          with:
-           oidc-provider-name: 'yoavh-new'
+           oidc-provider-name: 'github-oidc'
            version: latest
        - name: Ping Artifactory
          run: |
            ls -la
            jf --version
            jf rt ping
-           jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
-           jf npm ci
+        # jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
+       # jf npm ci
        # - name: python config
        #   run: jf pip-config --repo-resolve=yoavh-pypi-remote
        # - name: build
