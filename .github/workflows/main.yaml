@@ -34,7 +34,7 @@ jobs:
        - name: Ping Artifactory
          run: |
 
-          jf rt ping
+          jf rt cl example-repo-local/
           jf xr cl /api/v1/watches
         # jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
        # jf npm ci
