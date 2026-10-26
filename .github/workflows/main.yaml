@@ -17,6 +17,15 @@ jobs:
      steps:
        - name: Print
          run: env | sort
+       - name: Inspect GitHub OIDC Token Payload
+         run: |
+           # Request the raw JWT token from GitHub's OIDC provider
+           RAW_TOKEN=$(curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=jfrog-github" | jq -r '.value')
+  
+            # Extract and decode the second part (the JWT payload)
+           echo "=== Decoded OIDC Token Claims (JSON) ==="
+           echo "$RAW_TOKEN" | jq -R 'split(".") | .[1] | @base64d | fromjson'
        - name: Checkout
          uses: actions/checkout@v4
        - name: Setup JFrog CLI
@@ -33,8 +42,8 @@ jobs:
        - name: Ping Artifactory
          run: |
 
-          jf rt cl example-repo-local/
-          jf xr cl /api/v1/watches
+          jf rt ping
+        # jf xr cl /api/v1/watches
         # jf npmc --repo-resolve=yoavh-npm --repo-deploy=yoavh-npm
        # jf npm ci
        # - name: python config
