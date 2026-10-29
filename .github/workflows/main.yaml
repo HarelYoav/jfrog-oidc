@@ -38,7 +38,7 @@ jobs:
            # JF_ACCESS_TOKEN: ${{ secrets.JF_TOKEN }}
          with:
            oidc-provider-name: 'github-oidc'
-           version: '2.129'
+           version: latest
        - name: Ping Artifactory
          run: |
 
